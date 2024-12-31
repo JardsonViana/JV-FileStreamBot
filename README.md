@@ -1,87 +1,67 @@
-<h1 align="center">Telegram File Stream Bot</h3>
+<h1 align="center">Bot para Fazer Streaming de Arquivos Telegram</h1>
 <hr>
-I have created many repositories, and most of them are no longer maintained. So, I have decided to archive those repositories and keep only one actively maintained.
-<a href="https://github.com/SpringsFern/FileStreamBot">File Stream Bot</a> is the only repository maintained by me.
-<hr>
-<p align="center">
-  <a href="https://github.com/DeekshithSH/TG-FileStreamBot">
-    <img src="https://socialify.git.ci/DeekshithSH/TG-FileStreamBot/image?description=1&font=Source%20Code%20Pro&forks=1&issues=1&pattern=Charlie%20Brown&pulls=1&stargazers=1&theme=Dark" alt="TG-FileStreamBot" width="640" height="320" />
-  </a>
   <p align="center">
-    A Telegram bot to stream files to web<br/>
-    <a href="https://telegram.dog/DirectLinkGenerator_Bot"><strong>Demo Bot (Not Available)»</strong></a>
-    <br />
-    <a href="https://github.com/DeekshithSH/TG-FileStreamBot/issues">Report a Bug</a>
-    |
-    <a href="https://github.com/DeekshithSH/TG-FileStreamBot/issues">Request Feature</a>
-  </p>
-</p>
-
+    Um bot do Telegram para transmitir arquivos para a web<br/>
+    
 <hr>
 
 <details open="open">
-  <summary>Table of Contents</summary>
+  <summary>Índice</summary>
   <ol>
     <li>
-      <a href="#about-this-bot">About this Bot</a>
-      <ul>
-        <li><a href="#original-repository">Original Repository</a></li>
-      </ul>
+      <a href="#sobre-este-bot">Sobre este Bot</a>
+
     </li>
     <li>
-      <a href="#how-to-make-your-own">How to make your own</a>
+      <a href="#como-criar-o-seu">Como criar o seu</a>
       <ul>
-        <li><a href="#deploy-on-heroku">Deploy using Heroku</a></li>
-        <li><a href="#host-it-on-vps-or-locally">Run it in a VPS / local</a></li>
+        <li><a href="#implantar-no-heroku">Implantar usando Heroku</a></li>
+        <li><a href="#hospedar-em-vps-ou-localmente">Executar em um VPS / localmente</a></li>
       </ul>
     </li>
-    <li><a href="#setting-up-things">Setting up things</a></li>
+    <li><a href="#configurando-as-coisas">Configurando as coisas</a></li>
     <ul>
-      <li><a href="#mandatory-vars">Mandatory Vars</a></li>
-      <li><a href="#optional-vars">Optional Vars</a></li>
+      <li><a href="#variáveis-obrigatórias">Variáveis Obrigatórias</a></li>
+      <li><a href="#variáveis-opcionais">Variáveis Opcionais</a></li>
     </ul>
-    <li><a href="#how-to-use-the-bot">How to use the bot</a></li>
-    <li><a href="#contributing">Contributing</a></li>
-    <li><a href="#contact-me">Contact me</a></li>
-    <li><a href="#credits">Credits</a></li>
+    <li><a href="#como-usar-o-bot">Como usar o bot</a></li>
+    <li><a href="#contribuindo">Contribuindo</a></li>
+    <li><a href="#entre-em-contato">Entre em contato</a></li>
+    <li><a href="#créditos">Créditos</a></li>
   </ol>
 </details>
 
-## About This Bot
+## Sobre Este Bot
 
 <p align="center">
-    <a herf="https://github.com/DeekshithSH/TG-FileStreamBot">
-        <img src="https://www.flaticon.com/premium-icon/icons/svg/2626/2626281.svg" height="100" width="100" alt="Telegram Logo">
-    </a>
+        <img src="https://www.flaticon.com/premium-icon/icons/svg/2626/2626281.svg" height="100" width="100" alt="Logo Telegram">
+
 </p>
 <p align='center'>
-    This bot will give you stream links for Telegram files without the need of waiting till the download completes
+    Este bot fornecerá links de download e streaming para arquivos do Telegram sem a necessidade de esperar até o download ser concluído.
 </p>
 
-### Original Repository
+## Como criar o seu
 
-The main working part was taken from [Megatron](https://github.com/eyaadh/megadlbot_oss) and thanks to [eyaadh](https://github.com/eyaadh) for his awesome project.
+Você pode hospedar localmente ou implantar no [Heroku](https://heroku.com).
 
-## How to make your own
+### Implantar no Heroku
 
-Either you could locally host or deploy on [Heroku](https://heroku.com)
+Pressione o botão abaixo para implantar rapidamente no Heroku.
 
-### Deploy on Heroku
+- [![Implantar no Heroku](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
 
-Press the below button to fast deploy to Heroku
+Em seguida, vá para a <a href="#variáveis-obrigatórias">aba de variáveis</a> para mais informações sobre como configurar as variáveis ambientais.
 
-- [![Deploy To Heroku](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
-
-then goto the <a href="#mandatory-vars">variables tab</a> for more info on setting up environmental variables.
-
-### Host it on VPS or Locally
+### Hospedar em VPS ou Localmente
 
 ```sh
 git clone https://github.com/DeekshithSH/TG-FileStreamBot
 cd TG-FileStreamBot
 virtualenv -p /usr/bin/python3 venv
 . ./venv/bin/activate
-pip install -r requirements.txt
+pip install -r
+requirements.txt
 python3 -m WebStreamer
 ```
 
