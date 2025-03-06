@@ -1,72 +1,98 @@
-<h1 align="center">Bot para Fazer Streaming de Arquivos Telegram</h1>
-<hr>
+<h1 align="center">Telegram File Stream Bot</h3>
+<p align="center">
+  <a href="https://github.com/DeekshithSH/FileStreamBot">
+    <img src="https://socialify.git.ci/DeekshithSH/FileStreamBot/image?description=1&font=Source%20Code%20Pro&forks=1&issues=1&pattern=Charlie%20Brown&pulls=1&stargazers=1&theme=Dark" alt="FileStreamBot" width="640" height="320" />
+  </a>
   <p align="center">
-    Um bot do Telegram para transmitir arquivos para a web<br/>
-    
+    A Telegram bot to stream files to web<br/>
+    <a href="https://telegram.dog/DirectLinkGenerator_Bot"><strong>Demo Bot (Not Available)»</strong></a>
+    <br />
+    <a href="https://github.com/DeekshithSH/FileStreamBot/issues">Report a Bug</a>
+    |
+    <a href="https://github.com/DeekshithSH/FileStreamBot/issues">Request Feature</a>
+  </p>
+</p>
+
 <hr>
 
 <details open="open">
-  <summary>Índice</summary>
+  <summary>Table of Contents</summary>
   <ol>
     <li>
-      <a href="#sobre-este-bot">Sobre este Bot</a>
-
-    </li>
-    <li>
-      <a href="#como-criar-o-seu">Como criar o seu</a>
+      <a href="#about-this-bot">About this Bot</a>
       <ul>
-        <li><a href="#implantar-no-heroku">Implantar usando Heroku</a></li>
-        <li><a href="#hospedar-em-vps-ou-localmente">Executar em um VPS / localmente</a></li>
+        <li><a href="#original-repository">Original Repository</a></li>
       </ul>
     </li>
-    <li><a href="#configurando-as-coisas">Configurando as coisas</a></li>
+    <li>
+      <a href="#how-to-make-your-own">How to make your own</a>
+      <ul>
+        <li><a href="#host-it-on-vps-or-locally">Run it in a VPS / local</a></li>
+      </ul>
+    </li>
+    <li><a href="#setting-up-things">Setting up things</a></li>
     <ul>
-      <li><a href="#variáveis-obrigatórias">Variáveis Obrigatórias</a></li>
-      <li><a href="#variáveis-opcionais">Variáveis Opcionais</a></li>
+      <li><a href="#mandatory-vars">Mandatory Vars</a></li>
+      <li><a href="#optional-vars">Optional Vars</a></li>
     </ul>
-    <li><a href="#como-usar-o-bot">Como usar o bot</a></li>
-    <li><a href="#contribuindo">Contribuindo</a></li>
-    <li><a href="#entre-em-contato">Entre em contato</a></li>
-    <li><a href="#créditos">Créditos</a></li>
+    <li><a href="#how-to-use-the-bot">How to use the bot</a></li>
+    <li><a href="#contributing">Contributing</a></li>
+    <li><a href="#contact-me">Contact me</a></li>
+    <li><a href="#credits">Credits</a></li>
   </ol>
 </details>
 
-## Sobre Este Bot
+## About This Bot
 
 <p align="center">
-        <img src="https://www.flaticon.com/premium-icon/icons/svg/2626/2626281.svg" height="100" width="100" alt="Logo Telegram">
-
+    <a herf="https://github.com/DeekshithSH/FileStreamBot">
+        <img src="https://telegra.ph/file/a8bb3f6b334ad1200ddb4.png" height="100" width="100" alt="Telegram Logo">
+    </a>
 </p>
 <p align='center'>
-    Este bot fornecerá links de download e streaming para arquivos do Telegram sem a necessidade de esperar até o download ser concluído.
+    This bot will give you stream links for Telegram files without the need of waiting till the download completes
 </p>
 
-## Como criar o seu
+### Original Repository
+[FileStreamBot](https://github.com/SpringsFern/FileStreamBot) is a Modified Version of [TG-FileStreamBot](https://github.com/EverythingSuckz/TG-FileStreamBot) by [EverythingSuckz](https://github.com/EverythingSuckz/)
 
-Você pode hospedar localmente ou implantar no [Heroku](https://heroku.com).
+The main working part was taken from [Eyaadh's](https://github.com/eyaadh) [Megatron](https://github.com/eyaadh/megadlbot_oss) and [Tulir Asokan's](https://github.com/tulir) [tgfilestream](https://github.com/tulir/tgfilestream). Thanks to them for their awesome projects
 
-### Implantar no Heroku
+## How to make your own
 
-Pressione o botão abaixo para implantar rapidamente no Heroku.
+<!-- Host the bot on VPS or Locally -->
 
-- [![Implantar no Heroku](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
+### Deploy on Heroku
 
-Em seguida, vá para a <a href="#variáveis-obrigatórias">aba de variáveis</a> para mais informações sobre como configurar as variáveis ambientais.
+Press the below button to fast deploy to Heroku
 
-### Hospedar em VPS ou Localmente
+- [![Deploy To Heroku](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
+
+then goto the <a href="#mandatory-vars">variables tab</a> for more info on setting up environmental variables.
+
+### Host it on VPS or Locally
 
 ```sh
-git clone https://github.com/DeekshithSH/TG-FileStreamBot
-cd TG-FileStreamBot
-virtualenv -p /usr/bin/python3 venv
+cd /opt/
+git clone https://github.com/JardsonViana/JV-FileStreamBot.git
+cd JV-FileStreamBot
+python3 -m venv ./venv
 . ./venv/bin/activate
-pip install -r
-requirements.txt
+pip3 install -r requirements.txt
 python3 -m WebStreamer
 ```
 
 and to stop the whole bot,
  do <kbd>CTRL</kbd>+<kbd>C</kbd>
+
+- **If you wanna run this bot 24/7 on the VPS, follow these steps.**
+```sh
+sudo apt install tmux -y
+tmux
+python3 -m WebStreamer
+```
+
+now you can close the VPS and the bot will run on it.
 
 ## Setting up things
 
@@ -75,17 +101,34 @@ or if you're Locally hosting, create a file named `.env` in the root directory a
 An example of `.env` file:
 
 ```sh
+cd /opt/JV-FileStreamBot
+nano .env
+```
+Adicionar dentro de .env
+```sh
 API_ID=452525
 API_HASH=esx576f8738x883f3sfzx83
 BOT_TOKEN=55838383:yourtbottokenhere
 BIN_CHANNEL=-100
+FQDN=192.168.27.1
+HAS_SSL=False
 MULTI_TOKEN1=55838383:yourfirstmulticlientbottokenhere
 MULTI_TOKEN2=55838383:yoursecondmulticlientbottokenhere
 MULTI_TOKEN3=55838383:yourthirdmulticlientbottokenhere
 PORT=8080
-FQDN=yourserverip
-HAS_SSL=False
 ```
+### Criando API Telegram
+Acesse o link [my.telegram.org](https://my.telegram.org)
+- Informe o número de telefone;
+- Informe o código recebido no telegram;
+- Clique em API development tools;
+- Preencha os campos (exemplo):
+  - App Tittle: STREAMER-TELEGRAM-01
+  - Short Name: STRMJV01
+  - E escolhe a opção: web
+- Após salvar, receberá os dados de API;
+
+Obs.: Só é necessário realizar essas passos 1 vez por numero.
 
 ### Mandatory Vars
 
@@ -97,13 +140,11 @@ HAS_SSL=False
 
 `BIN_CHANNEL` : Create a new channel (private/public), post something in your channel. Forward that post to [@missrose_bot](https://telegram.dog/MissRose_bot) and **reply** `/id`. Now copy paste the forwarded channel ID in this field. 
 
-`OWNER_ID` : Your Telegram User ID
-
 ### For MultiClient
 
-`MULTI_TOKEN1`: Add your first bot token or session strings here.
+`MULTI_TOKEN1`: Add your first bot token here.
 
-`MULTI_TOKEN2`: Add your second bot token or session strings here.
+`MULTI_TOKEN2`: Add your second bot token here.
 
 you may also add as many as bots you want. (max limit is not tested yet)
 `MULTI_TOKEN3`, `MULTI_TOKEN4`, etc.
@@ -112,23 +153,68 @@ you may also add as many as bots you want. (max limit is not tested yet)
 
 ### Optional Vars
 
-`SLEEP_THRESHOLD` : Set a sleep threshold for flood wait exceptions happening globally in this telegram bot instance, below which any request that raises a flood wait will be automatically invoked again after sleeping for the required amount of time. Flood wait exceptions requiring higher waiting times will be raised. Defaults to 60 seconds.
+`ALLOWED_USERS`:  A list of user IDs separated by comma (,). If this is set, only the users in this list will be able to use the bot.
 
-`WORKERS` : Number of maximum concurrent workers for handling incoming updates. Defaults to `3`
+> **Note**
+> Leave this field empty and anyone will be able to use your bot instance.
 
-`PORT` : The port that you want your webapp to be listened to. Defaults to `8080`
+`CHUNK_SIZE`: Size of the chunk to request from Telegram server when streaming a file [See more](https://core.telegram.org/api/files#downloading-files)
 
-`WEB_SERVER_BIND_ADDRESS` : Your server bind address. Defauls to `0.0.0.0`
+`CONNECTION_LIMIT`:  (default 20) - The maximum number of connections to a single Telegram datacenter.
 
-`NO_PORT` : (can be either `True` or `False`) If you don't want your port to be displayed. You should point your `PORT` to `80` (http) or `443` (https) for the links to work. Ignore this if you're on Heroku.
+`CUSTOM_URL`: Only set this true if you set `LINK_TEMPLATE` field
 
 `FQDN` :  A Fully Qualified Domain Name if present. Defaults to `WEB_SERVER_BIND_ADDRESS`
 
 `HAS_SSL` : (can be either `True` or `False`) If you want the generated links in https format.
 
-`PING_INTERVAL` : The time in ms you want the servers to be pinged each time to avoid sleeping (Only for Heroku). Defaults to `1200` or 20 minutes.
+`KEEP_ALIVE` : If you want to make the server ping itself every
 
-`UPDATES_CHANNEL` : Update Channel shown with Start Text
+> [!WARNING]
+> `LINK_TEMPLATE`: Modify format in which download links are generated
+> **Ignore this field**
+> <details>
+> <summary>[Expand]</summary>
+>   This setting allows customization of how the download link is displayed to users. It does **not** affect the actual link used by the bot to fetch the file—only the visible link format changes.  
+> 
+> You can customize the link format using placeholders that will be replaced with actual values when generating the link. Available placeholders:  
+> - `{url}` – The base URL (`CUSTOM_URL`) where the file is hosted.  
+> - `{name}` – The file name (URL-encoded).  
+> - `{size}` – The file size in human-readable format.  
+> - `{id}` – The unique ID of the file message.  
+> - `{mime}` – The file's MIME type (URL-encoded).  
+> - `{time}` – The Unix timestamp when the link is generated.  
+> 
+> Example customization:  
+> ```
+> LINK_TEMPLATE = "{url}/download/{id}/{name}?size={size}&type={mime}"
+> ```
+> This will generate a link like:  
+> ```
+> https://yourdomain.com/download/12345/sample.pdf?size=2MB&type=application/pdf
+> ```
+> </details>
+<br>
+
+`NO_PORT` : (can be either `True` or `False`) If you don't want your port to be displayed. You should point your `PORT` to `80` (http) or `443` (https) for the links to work. Ignore this if you're on Heroku.
+
+`NO_UPDATE` if set to `true` bot won't respond to any messages
+
+`PING_INTERVAL` : The time in seconds you want the servers to be pinged each time to avoid sleeping (Only for Heroku). Defaults to `600` or 10 minutes.
+
+`PORT` : The port that you want your webapp to be listened to. Defaults to `8080`
+
+`REQUEST_LIMIT`: (default 5) - The maximum number of requests a single IP can have active at a time
+
+`SLEEP_THRESHOLD` : Set a sleep threshold for flood wait exceptions happening globally in this telegram bot instance, below which any request that raises a flood wait will be automatically invoked again after sleeping for the required amount of time. Flood wait exceptions requiring higher waiting times will be raised. Defaults to 60 seconds.
+
+`TRUST_HEADERS`: (defaults to true) - Whether or not to trust X-Forwarded-For headers when logging requests.
+
+`UPDATES_CHANNEL` : Your Telegram Channel Username without @
+
+`WEB_SERVER_BIND_ADDRESS` : Your server bind address. Defauls to `0.0.0.0`
+
+`WORKERS` : Number of maximum concurrent workers for handling incoming updates. Defaults to `3`
 
 ## How to use the bot
 
@@ -143,16 +229,79 @@ To get an instant stream link, just forward any media to the bot and boom, its f
 - How long the links will remain valid or is there any expiration time for the links generated by the bot?
 > The links will will be valid as longs as your bot is alive and you haven't deleted the log channel.
 
+## Configurando o bot no systemd
+```sh
+# Criando o arquivo no systemd:
+nano /etc/systemd/system/streamer-bot.service
+```
+```sh
+[Unit]
+Description=Bot Streamer
+After=network.target
+
+[Service]
+Type=simple
+User=root
+WorkingDirectory=/opt/JV-FileStreamBot
+ExecStart=/opt/JV-FileStreamBot/venv/bin/python3 -m WebStreamer
+Restart=always
+Environment=PATH=/opt/JV-FileStreamBot/venv/bin:/usr/bin:/bin
+Environment=VIRTUAL_ENV=/opt/JV-FileStreamBot/venv
+ExecStartPre=/bin/bash -c 'if [ ! -d "/opt/JV-FileStreamBot/venv" ]; then python3 -m venv /opt/JV-FileStreamBot/venv; fi'
+
+# Redirecionando a saída e o erro para arquivos de log
+StandardOutput=file:/var/log/FileStreamBot/logs/output.log
+StandardError=file:/var/log/FileStreamBot/logs/error.log
+
+[Install]
+WantedBy=multi-user.target
+```
+```sh
+# Criando o diretorio para registrar os logs:
+mkdir -p /var/log/FileStreamBot/logs
+```
+```sh
+# Rodando o daemon para atualizar o systemd:
+systemctl daemon-reload
+
+# Habilitando a aplicação:
+systemctl enable streamer-bot.service
+
+# Iniciando a aplicação:
+systemctl start streamer-bot.service
+
+# Visuliando o status:
+systemctl status streamer-bot.service
+```
+```sh
+# Para vefificar os logs de saida:
+tail -f /var/log/FileStreamBot/logs/output.log
+
+# Para vefificar os logs de errors:
+tail -f /var/log/FileStreamBot/logs/error.log
+```
+
 ## Contributing
 
 Feel free to contribute to this project if you have any further ideas
 
 ## Contact me
 
-[![Telegram Channel](https://img.shields.io/static/v1?label=Join&message=Telegram%20Channel&color=blueviolet&style=for-the-badge&logo=telegram&logoColor=violet)](https://xn--r1a.click/AWeirdText)
+[![Telegram Channel](https://img.shields.io/static/v1?label=Join&message=Telegram%20Channel&color=blueviolet&style=for-the-badge&logo=telegram&logoColor=violet)](https://xn--r1a.click/SpringsFern)
 [![Telegram Group](https://img.shields.io/static/v1?label=Join&message=Telegram%20Group&color=blueviolet&style=for-the-badge&logo=telegram&logoColor=violet)](https://xn--r1a.click/AWeirdString)
 
 You can contact either via my [Telegram Group](https://xn--r1a.click/AWeirdString) ~~or you can PM me on [@DeekshithSH](https://xn--r1a.click/DeekshithSH)~~
+
+
+## Credits
+
+- [Me](https://xn--r1a.click/DeekshithSH)
+- [EverythingSuckz](https://github.com/EverythingSuckz) for his [TG-FileStreamBot](https://github.com/EverythingSuckz/TG-FileStreamBot)
+- [Tulir Asokan](https://github.com/tulir) for his [tg filestream](bit.ly/tg-stream)
+- [eyaadh](https://github.com/eyaadh) for his awesome [Megatron Bot](https://github.com/eyaadh/megadlbot_oss).
+- [BlackStone](https://github.com/eyMarv) for adding multi-client support.
+- [Lonami](https://github.com/Lonami) for his [Telethon Library](https://github.com/LonamiWebs/Telethon)
+- [TheHamkerCat](https://github.com/TheHamkerCat) for helping me with my common doubts.
 
 
 ## Credits
